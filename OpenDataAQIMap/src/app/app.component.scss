@@ -409,3 +409,12 @@ mat-card {
   line-height: 24px;
   color: rgb(255 255 255);
 }
+
+.mat_nav_list{
+  &_text{
+    color: white;
+  }
+  &_maticon {
+    margin-right: 10px;
+    }
+}

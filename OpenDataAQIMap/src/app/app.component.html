@@ -25,33 +25,43 @@
 </div> -->
 
 <mat-drawer-container>
-	<mat-drawer #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="mobileQuery.matches" [ngClass]="{'sidenav-collapsed': collapsedNav && mobileQuery.matches}">
-		<div class="sidenav-header">
+  <mat-drawer #drawer [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="mobileQuery.matches"
+    [ngClass]="{'sidenav-collapsed': collapsedNav && mobileQuery.matches}">
+    <div class="sidenav-header">
       <span>{{collapsedNav && !mobileQuery.matches ? '' : 'AQI'}}</span>
-		</div>
-		<ul>
-			<li>
-        <!-- AQI -->
-				<mat-icon>home</mat-icon>
-			</li>
-			<li>
-				<mat-icon>exit_to_app</mat-icon>
-			</li>
-		</ul>
-	</mat-drawer>
-	<mat-drawer-content [ngClass]="{'sidenav-collapsed': collapsedNav && mobileQuery.matches}">
+    </div>
+    <mat-nav-list>
+      <h3 matSubheader>
+        <span class="mat_nav_list_text">
+          功能頁面
+        </span>
+      </h3>
+      <mat-list-item [routerLink]="['/', 'map']" (click)="drawer.toggle()" id="title01">
+        <mat-icon class="mat_nav_list_maticon">home</mat-icon>
+        <span class="mat_nav_list_text">
+          首頁
+        </span>
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/', 'test']" (click)="drawer.toggle()">
+        <mat-icon class="mat_nav_list_maticon">exit_to_app</mat-icon>
+        <span class="mat_nav_list_text">
+          收件夾
+        </span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content [ngClass]="{'sidenav-collapsed': collapsedNav && mobileQuery.matches}">
     <div>
       <mat-toolbar style=" background-color: rgb(35 33 68);">
-        <!-- <button mat-icon-button (click)="snav.toggle()"> -->
-        <button mat-icon-button (click)="!mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">
+        <!-- <button mat-icon-button (click)="drawer.toggle()"> -->
+        <button mat-icon-button (click)="!mobileQuery.matches ? drawer.toggle() : collapsedNav = !collapsedNav">
           <mat-icon>menu</mat-icon>
         </button>
       </mat-toolbar>
     </div>
     <div>
-      <app-map></app-map>
+      <!-- <app-map></app-map> -->
+      <router-outlet></router-outlet>
     </div>
-
-
-	</mat-drawer-content>
+  </mat-drawer-content>
 </mat-drawer-container>

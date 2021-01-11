@@ -43,13 +43,15 @@ import {MatTreeModule} from '@angular/material/tree';
 import { SidenavComponent } from './OpenDataMapAir/sidenav/sidenav.component';
 import { MapComponent } from './OpenDataMapAir/map/map.component';
 import { CardDetailComponent } from './OpenDataMapAir/card-detail/card-detail.component';
+import { TestComponent } from './OpenDataMapAir/test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
     MapComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

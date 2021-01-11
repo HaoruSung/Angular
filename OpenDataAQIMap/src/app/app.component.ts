@@ -1,5 +1,5 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +37,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 // }
 
 export class AppComponent {
+  // @ViewChild('drawer') drawer;
   collapsedNav: boolean;
   mobileQuery: MediaQueryList;
 
