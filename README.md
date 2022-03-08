@@ -1,2 +1,2 @@
 # Angular
-Study Angular
+Angular
